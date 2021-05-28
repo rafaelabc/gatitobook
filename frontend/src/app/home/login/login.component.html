@@ -1,0 +1,12 @@
+<h4 class="text-center">Login</h4>
+<form class="form mt-4" (ngSubmit)="login()">
+  <div class="mb-3">
+    <input [(ngModel)]="usuario" name="usuario" type="text" class="form-control" placeholder="Nome do usuário">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="senha" name="senha" type="password" placeholder="Senha" class="form-control">
+  </div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form>
