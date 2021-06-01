@@ -1,12 +1,18 @@
-<h4 class="text-center">
-  Registre-se e mostre seu pet ao mundo!
-</h4>
+<h4 class="text-center">Registre-se e mostre seu pet ao mundo!</h4>
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
   <div class="mb-3">
     <input class="form-control" placeholder="e-mail" formControlName="email" />
+    <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.required &&
+                    novoUsuarioForm.get('email')?.touched"
+      mensagem="Email obrigatório"></app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.email &&
+      novoUsuarioForm.get('email')?.touched" mensagem="Email no formato incorreto"></app-mensagem>
+
   </div>
   <div class="mb-3">
-    <input class="form-control" placeholder="Nome completo" formControlName="fullName"/>
+    <input class="form-control" placeholder="Nome completo" formControlName="fullName" />
+    <app-mensagem *ngIf="novoUsuarioForm.get('fullName')?.errors &&
+    novoUsuarioForm.get('fullName')?.touched" mensagem="Nome incorreto"></app-mensagem>
   </div>
   <div class="mb-3">
     <input class="form-control" placeholder="Usuário" formControlName="userName" />
@@ -18,4 +24,4 @@
     <button class="btn btn-primary" type="submit">Cadastro</button>
   </div>
 </form>
-<p>Já é um usuário ? <a [routerLink]="['']">Faça login!</a> </p>
+<p>Já é um usuário ? <a [routerLink]="['']">Faça login!</a></p>
