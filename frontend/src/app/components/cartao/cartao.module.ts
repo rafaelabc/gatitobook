@@ -2,13 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CartaoComponent } from './cartao.component';
 
-
-
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ],
-  exports: [CartaoComponent]
+  declarations: [CartaoComponent],
+  imports: [CommonModule],
+  exports: [CartaoComponent],
 })
-export class CartaoModule { }
+export class CartaoModule {}
